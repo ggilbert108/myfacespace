@@ -7,7 +7,7 @@ app = Flask(__name__)
 
 @io.on('chat')
 def chat_message(sid, data):
-    print(data["contents"])
+    print(data['username'] + ' said: ' + data["contents"])
 
 if __name__ == '__main__':
     app = socketio.Middleware(io, app)
